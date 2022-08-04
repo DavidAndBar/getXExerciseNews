@@ -20,7 +20,7 @@ class TheGuardianClient {
     logInfo('Client getItems URI ${uri.toString()}');
 
     try {
-      final response = await http.get(uri).timeout(Duration(seconds: 1));
+      final response = await http.get(uri).timeout(Duration(seconds: 5));
       if (response.statusCode == 200) {
         logInfo("Got code 200");
         var jsonResponse = json.decode(utf8.decode(response.bodyBytes));
